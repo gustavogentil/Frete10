@@ -5,7 +5,9 @@ Desenvolvido por Gustavo Gentil
 Projeto foi feito com base no curso da Udemy de nome Projeto Fullstack com Spring Boot 2 e Angular 11
 do Valdir Cezar.
 
-Para rodar o front end obtenha o angular 11. para subir a aplicação digite NG g serve no visual studio code.
+Para rodar o front end obtenha o angular 11.
+
+Para subir a aplicação digite NG g serve no visual studio code.
 Softwares necessário - VS Code, Angular CLI, Node JS com NPM.
 Spring Tools Suit - https://spring.io/tools
 Java JDK 11 LTS - https://www.oracle.com/java/technologies/javase-downloads.html
