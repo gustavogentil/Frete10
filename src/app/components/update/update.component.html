@@ -1,1 +1,26 @@
-<p>update works!</p>
+<form>
+    <h1>
+        ATUALIZANDO FRETE
+    </h1>
+    
+
+      <div class="forms">
+        <form class="form">
+            <label>Status  </label>
+            <input [(ngModel)] ="frete.status" name="frete.status" matInput placeholder="Status">
+          
+          </form>
+          <form class="form">
+            <label>Ocorrências  </label>
+          <p>
+            <input [(ngModel)] ="frete.ocorrencia" name="frete.ocorrencia" matInput placeholder="Ex: Acidente" style="height: 90px; width: 500px;">
+          </p>  
+   <!--     <TEXTAREA [(ngModel)] ="frete.ocorrencia" name="frete.ocorrencia" COLS=90 ROWS=5 NAME="comentario">{{frete.ocorrencia}} </TEXTAREA>-->
+        </form>
+      </div>
+      <div class="buttons">
+        <button (click)="update()" mat-stroked-button color="primary">ATUALIZAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+      </div>
+</form>
+

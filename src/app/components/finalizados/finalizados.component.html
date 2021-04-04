@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>
+        Histórico de Fretes
+    </h1>
+    <div class="badge">
+        <button (click)="voltar()" mat-stroked-button color="primary">Voltar</button>
+    </div>
+   
+
+    <div class="content" *ngFor="let item of listFinished">     
+        
+         <mat-card class="mat-elevation-z8">
+            <p>Data da entrega: {{ item.dataOcorrencia}} </p>
+            <mat-card-header>
+                <mat-card-title>Origem:     {{ item.origem}}</mat-card-title>
+                <mat-card-title>Destino:  {{ item.destino}}</mat-card-title>
+                <mat-card-title>Valor do Frete:  {{ item.valor}}</mat-card-title>
+              <mat-card-title>Status:  {{ item.status}}</mat-card-title>
+              <mat-card-title>Ocorrências:  {{ item.ocorrencia }}</mat-card-title>
+            </mat-card-header>
+
+           
+         </mat-card>
+       
+    </div>
+</div>
+

@@ -20,15 +20,21 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { UpdateComponent } from './components/update/update.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSliderModule } from '@angular/material/slider';
+import { FinalizadosComponent } from './components/finalizados/finalizados.component';
+import { CreateComponent } from './components/create/create.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     ReadAllComponent,
-    UpdateComponent
+    UpdateComponent,
+    FinalizadosComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
     MatSelectModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatSliderModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

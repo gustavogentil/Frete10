@@ -5,7 +5,7 @@ export interface Frete{
     destino: String,
     valor?: String,
     peso: String,
-    dataOcorrencia: String,
+    dataOcorrencia: any,
     status: Boolean,
     ocorrencia: String    
 }

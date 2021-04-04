@@ -1,0 +1,49 @@
+<form>
+    <h1>
+        Criar Novo Frete
+    </h1>
+    
+
+      <div class="forms">
+        <form class="form">
+         <p> <label>  Descrição  </label>
+            <input [(ngModel)] ="frete.descricao" name="frete.descricao" matInput placeholder="Descricao">
+        </p>
+          </form>
+          <form class="form">
+           <p> <label>Origem  </label>
+            <input [(ngModel)] ="frete.origem" name="frete.origem" matInput placeholder="origem">
+        </p>
+          </form>
+          <form class="form">
+            <p><label>Destino  </label>
+            <input [(ngModel)] ="frete.destino" name="frete.destino" matInput placeholder="Destinop">
+        </p>
+          </form>
+          <form class="form">
+        <p>
+            <label>Valor  </label>
+            <input [(ngModel)] ="frete.valor" name="frete.valor" matInput placeholder="Valor">
+        </p>
+          </form>
+
+        <form class="form">
+            <p>
+            <label>Status  </label>
+            <input [(ngModel)] ="frete.status" name="frete.status" matInput placeholder="Status">
+        </p>
+          </form>
+          <form class="form">
+        <p>
+            <label>Ocorrência  </label>
+            <input [(ngModel)] ="frete.ocorrencia" name="frete.ocorrencia" matInput placeholder="Ex: Acidente">
+        </p> 
+        </form>
+      </div>
+      <div class="buttons">
+    <p><button (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </p> 
+    </div>
+</form>
+

@@ -1,84 +1,112 @@
-<div class="container">
-    <button class="seus-fretes mat-elevation-z8" mat-stroked-button color="primary" >
-      <div fxFlex="value%" fxFlexAlign="center">
-        Seus Fretes</div></button>  
-  <div class="box">
-    <table>
-    <div class="content" *ngFor="let item of list">
-        <mat-card class="mat-elevation-z8">
-          <tr> 
-            <td><h1><p>FreteId</p></h1>
-        <mat-card-header>
-         <mat-card-title>&nbsp;&nbsp;&nbsp;{{item.id}}</mat-card-title>
-        </mat-card-header> 
-     </td>
-     <td><h1><p>Valor</p></h1>
-      <mat-card-header>
-       <mat-card-title>{{item.valor}}</mat-card-title>
-      </mat-card-header> 
-      </td>
-     <td><h1><p>Descrição</p></h1>
-    <mat-card-header>
-     <mat-card-title>{{item.descricao}}</mat-card-title>
-    </mat-card-header> 
-    </td>
 
-    <td><h1><p>Orgiem</p></h1>
-      <mat-card-header>
-       <mat-card-title>{{item.origem}}</mat-card-title>
-      </mat-card-header> 
-      </td>
-      <td><h1><p>Destino</p></h1>
+  <div class="container">
+      <button class="navegarParaFinalizados()" class="mat-elevation-z8" mat-stroked-button color="primary">
+        <div fxFlex="value%" fxFlexAlign="center">
+        <a href="http://localhost:4200/finalizados"> Histórico de Fretes</a> 
+      </div>
+      </button>  
+      <button routerLink="create" class="novo-frete mat-elevation-z8" mat-stroked-button color="primary">CRIAR NOVO FRETE</button>
+      <p></p>
+      <div class="mat-toolbar" fxLayoutAlign="center center">
+        <h1>
+        <div  class="fretes mat-elevation-z8" fxFlex="value%" fxFlexAlign="center" >
+          &nbsp; SEUS FRETES:
+        </div>
+        </h1>
+    </div>
+      <div class="content" *ngFor="let item of list">
+          <table> 
+        <mat-card class="mat-elevation-z8">
+    <tr>
+        <td><h1><p>FreteId</p></h1>
+          <mat-card-header>
+            <mat-card-title>&nbsp;&nbsp;&nbsp;&nbsp;{{item.id}}</mat-card-title>
+          </mat-card-header> 
+          </td>
+
+       <td><h1><p>Valor</p></h1>
         <mat-card-header>
-         <mat-card-title>{{item.destino}}</mat-card-title>
+         <mat-card-title>{{item.valor}}</mat-card-title>
         </mat-card-header> 
         </td>
-    <td><h1><p>Data</p></h1>
-  <mat-card-header>
-   <mat-card-title>{{item.dataOcorrencia}}</mat-card-title>
-  </mat-card-header> 
-</td>
 
-<div class="Status">
-<p>
-<td><h1><p>Status</p></h1>
-  <mat-card-header>
-    <mat-card-title>
-      <form action="update/{{ item.id }}">
-        
-   <select name=status id="{{item.status}}">
-   <br><option value="{{item.status}}">Pendente</option>
-   <option value="{{item.status}}">Entregue</option>
-   </select>
-        
-  </form>
-  </mat-card-title>
-  </mat-card-header> 
-</td>
-</p></div></tr>
-
-<mat-divider>tese</mat-divider>
-<tr>
-  <td><div class="ocorrencias" >
-    <h1>
-      Ocorrências   
-    </h1><p font-size="18px">
-     
-    <TEXTAREA COLS=90 ROWS=5 NAME="comentario"> {{item.ocorrencia}} </TEXTAREA>
-    <br>
-    <button routerLink="update/{{ item.id }}">
-      <input type="submit" value="Atualizar ocorrência" fxLayoutAlign="end">
-    </button>
-      <span id="pontos"></span><span id="mais"></span>
-  </p>
+       <td><h1><p>Descrição</p></h1>
+      <mat-card-header>
+       <mat-card-title>{{item.descricao}}</mat-card-title>
+      </mat-card-header> 
+      </td>
   
-</div></td>
-</tr>
-</mat-card>
+      <td><h1><p>Origem</p></h1>
+        <mat-card-header>
+         <mat-card-title>{{item.origem}}</mat-card-title>
+        </mat-card-header> 
+        </td>
 
-        </div></table>
-  </div>
+        <td><h1><p>Destino</p></h1>
+          <mat-card-header>
+           <mat-card-title>{{item.destino}}</mat-card-title>
+          </mat-card-header> 
+          </td>
+
+      <td><h1><p>Data</p></h1>
+        <mat-card-header>
+          <mat-card-title>{{item.dataOcorrencia}}</mat-card-title>
+          </mat-card-header> 
+      </td>
+  
+    
+   
+      
+             <td><h1><p>Status</p></h1>
+                <mat-card-header>
+                    <mat-card-title>{{item.status}}</mat-card-title>
+                    
+                </mat-card-header> 
+                </td>
+    </tr>           
+                <mat-divider></mat-divider>
+           <form >      
+          <td><h1><p font-size="18px">Ocorrências</p></h1>
+      <div>
+        <TEXTAREA id="result" COLS=90 ROWS=5 NAME="comentario"> {{item.ocorrencia}} </TEXTAREA>
+      </div>
       <div class="actions">
-        <a mat-raised-button href="file:///C:/Users/gusta/Desktop/projetos/frete10/maisdetalhes.html" target="_blank">Detalhes do Ultimo Frete</a>
-      </div>  
-</div>
+        
+      
+        <button (click)="finalizar(item)"  mat-stroked-button color="primary">
+          Concluir Entrega de Frete  
+       </button>
+       <button routerLink="update/{{ item.id }}" mat-stroked-button color="primary">
+        Atualizar Ocorrências
+     </button>
+        <button (click)="delete(item.id)"  mat-stroked-button color="primary">
+           Deletar frete
+      </button>
+      
+        <script>
+          function salvar() {
+              // Check browser support
+              if (typeof(Storage) !== "undefined") {
+                  // Store
+                  localStorage.setItem("text", document.getElementById("result").value);
+      
+              } else {
+                  document.getElementById("result").innerHTML = "Local Storage não suportado";
+              }
+          }
+           // Retrieve
+              document.getElementById("result").innerHTML = localStorage.getItem("text");
+          </script>
+      </div>   
+          </td>
+      </form>  
+    
+  
+  
+      </mat-card>      
+  </table><!---->
+    </div>
+        
+  </div><!--div do conteiner-->
+
+  
