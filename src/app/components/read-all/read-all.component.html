@@ -18,7 +18,7 @@
           <table> 
         <mat-card class="mat-elevation-z8">
     <tr>
-        <td><h1><p>FreteId</p></h1>
+        <td><h1><p>RegFrete</p></h1>
           <mat-card-header>
             <mat-card-title>&nbsp;&nbsp;&nbsp;&nbsp;{{item.id}}</mat-card-title>
           </mat-card-header> 
@@ -59,7 +59,7 @@
       
              <td><h1><p>Status</p></h1>
                 <mat-card-header>
-                    <mat-card-title>{{item.status}}</mat-card-title>
+                    <mat-card-title>{{item.status ? 'Concluído' : 'Pendente'}}</mat-card-title>
                     
                 </mat-card-header> 
                 </td>

@@ -15,7 +15,8 @@
                 <mat-card-title>Origem:     {{ item.origem}}</mat-card-title>
                 <mat-card-title>Destino:  {{ item.destino}}</mat-card-title>
                 <mat-card-title>Valor do Frete:  {{ item.valor}}</mat-card-title>
-              <mat-card-title>Status:  {{ item.status}}</mat-card-title>
+                <mat-card-title>Descrição:  {{ item.descricao}}</mat-card-title>
+              <mat-card-title>Status:  {{item.status ? 'Concluído' : 'Pendente'}}</mat-card-title>
               <mat-card-title>Ocorrências:  {{ item.ocorrencia }}</mat-card-title>
             </mat-card-header>
 
